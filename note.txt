@@ -1,0 +1,99 @@
+Server Creation
+---------------
+1) npm-node package manager
+to install npm - npm init 
+
+2) To install Express framework
+npm i Express
+
+Steps to create Server
+----------------------
+
+1- Import Express
+2- create an App using Express
+3- Set a port to run 3000/8000
+
+install nodemon
+---------------
+npm i nodemon
+
+--> It is used for automatic recompilation
+
+to run Server
+-------------
+
+-->npx nodemon index.js
+
+to connect server with MongoDB and Frontend
+-------------------------------------------
+
+MongoDB
+--------
+* Open MongoDB compass
+* give databasename
+* give collectname-collection name must be plural
+* Add Data by using Insert Document
+
+mongodb shell commands
+-----------------------
+show dbs --->To see databases in mongodb
+use dataBaseName ---> To open any database
+show collections ---> To see the collections
+db.collectionName.find()-->access all data inside collection
+db.collectionName.findOne({})-->to access any single data
+db.collectionName.insertOne({keys:values})---> To insert a data
+db.collectionName.find(query selection operators)---> To find data according to a condition
+eg: db.users.find({balance:{gt:4000}})
+db.collectionName.deleteOne({})-->delete a single data
+db.collectionName.updateOne({}) --->update a single data({data to be changed},$set{new data})
+eg:db.users.updateOne({uname:anu},$set{uname:anu v})
+
+server-db integration
+---------------------
+3000 - 27017
+
+->mongoose - library used to integrate db with server
+ npm i mongoose
+
+ Steps
+ -----
+ 1- Import mongoose
+ 2- connection string to connect - connect()
+ 3- define collection model      - model()
+ 4-export model
+
+ Cors- cross origin resource sharing
+ -----
+ used to integrate client with server 
+
+ 
+
+Jwt token-Json web token
+-------------------------
+* it is used to apply token based user authentication
+
+to install
+npm i jsonwebtoken
+
+middlewares
+-----------
+
+Its a function with three arguments - request,response,next
+it have the capacity to control server requests
+
+2 types of middlewares
+----------------------
+    1. Application Specific middlewares --> It control all the server requests
+    2. Router Specific middlewares      --> only control developer specified server request
+
+try-catch
+---------
+
+used to resolve run-time errors(unexpected errors)
+
+try{
+    error causing code
+}
+catch{
+    code to work when error occured in try  block
+}
